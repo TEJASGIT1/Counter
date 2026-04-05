@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: relative;
+        top: 80px;
+        left: 35%;
+      }
+      .box {
+        height: 300px;
+        width: 500px;
+        background-color: rgb(232, 231, 231);
+        border-radius: 10px;
+        text-align: center;
+        align-content: center;
+      }
+      .heading {
+        color: rgb(9, 9, 134);
+      }
+      .display {
+        color: green;
+      }
+      button {
+        padding: 9px;
+        font-size: medium;
+        margin: 10px;
+        border: 3px solid rgb(8, 163, 163);
+        border-radius: 20px;
+
+        &:hover {
+          box-shadow: 2px 0px 10px 2px rgb(8, 163, 163);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1 class="heading">Counter</h1>
+      <div><h1 class="display"></h1></div>
+      <div class="btn">
+        <button class="decrement-btn">Decrement</button>
+        <button class="reset-btn">Reset</button>
+        <button class="increment-btn">Increment</button>
+      </div>
+    </div>
+
+    <script>
+      let display = document.querySelector(".display");
+      let Dbtn = document.querySelector(".decrement-btn");
+      let Rbtn = document.querySelector(".reset-btn");
+      let Ibtn = document.querySelector(".increment-btn");
+      let value = 0;
+      display.innerText = value;
+      Dbtn.addEventListener("click", () => {
+        value--;
+        display.innerText = value;
+      });
+
+      Rbtn.addEventListener("click", () => {
+        value = 0;
+        display.innerText = value;
+      });
+
+      Ibtn.addEventListener("click", () => {
+        value++;
+        display.innerText = value;
+      });
+    </script>
+  </body>
+</html>
